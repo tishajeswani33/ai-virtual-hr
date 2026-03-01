@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HRProvider } from './context/HRContext';
 import { Layout } from './components/Layout';
 import { Dashboard } from './pages/Dashboard';
@@ -15,19 +15,18 @@ function App() {
     <HRProvider>
       <BrowserRouter>
         <Routes>
-          {/* Public Login Routes */}
-          <Route path="/user-login" element={<UserLogin />} />
+          {/* Public Auth Routes - no sidebar */}
+          <Route path="/login" element={<UserLogin />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/signup" element={<SignUp />} />
 
-          {/* Protected App Routes */}
+          {/* App Routes - with sidebar layout */}
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="employees" element={<Employees />} />
             <Route path="candidates" element={<Candidates />} />
             <Route path="ai-assistant" element={<AIAssistant />} />
             <Route path="interview" element={<VoiceInterview />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
       </BrowserRouter>

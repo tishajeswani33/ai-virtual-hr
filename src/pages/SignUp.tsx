@@ -145,7 +145,7 @@ export function SignUp() {
                 <div className="bg-slate-50 p-6 text-center border-t border-slate-100 flex flex-col gap-2">
                     <p className="text-slate-600 text-sm">
                         Already have an account?{' '}
-                        <button onClick={() => navigate('/user-login')} className="text-indigo-600 font-semibold hover:underline">
+                        <button onClick={() => navigate('/login')} className="text-indigo-600 font-semibold hover:underline">
                             Sign In
                         </button>
                     </p>
